@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
  
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 5.2.0'
  
 group :production do
    # Use pg as the production database for Active Record
@@ -37,8 +37,20 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
  
-gem 'thor', '0.19.1'
+gem 'thor', '0.20.0'
  
 group :development do
    gem 'listen', '~> 3.0.5'
 end
+
+group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+   gem 'rails-controller-testing'
+   gem 'factory_bot_rails', '~> 4.0'
+end
+
+gem 'bootstrap-sass'
+
+gem 'devise'
+
+gem 'bootsnap'
