@@ -1,5 +1,5 @@
 class WikisController < ApplicationController
-  
+
 #INDEX
   def index
      @wikis = Wiki.all
@@ -57,6 +57,7 @@ class WikisController < ApplicationController
 #DESTROY
   def destroy
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
 
     if @wiki.destroy
       flash[:notice] = "\"#{@wiki.title}\" was deleted successfully."
