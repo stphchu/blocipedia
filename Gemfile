@@ -56,3 +56,5 @@ gem 'devise'
 gem 'bootsnap'
 
 gem 'pundit'
+
+gem 'faker'
