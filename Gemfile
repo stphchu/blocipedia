@@ -58,3 +58,7 @@ gem 'bootsnap'
 gem 'pundit'
 
 gem 'faker'
+
+gem 'stripe'
+
+gem 'figaro'

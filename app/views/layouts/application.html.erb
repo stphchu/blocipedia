@@ -19,7 +19,8 @@
 
     <% if user_signed_in? %>
      <div>
-       <li class="pull-right">Signed in as: <strong><%= current_user.email %></strong></li><br>
+       <li class="pull-right">Signed in as: <strong><%= current_user.email %></strong>
+           <% if current_user.role == "premium" %><i> (Premium)</i><% end %></li><br>
        <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
        <div><li class="pull-right">|</li></div>
        <li class="pull-right"><%= link_to "Edit profile", edit_user_registration_path %></li>

@@ -9,6 +9,9 @@
            <h4 class="media-heading">
              <%= link_to wiki.title, wiki %>
            </h4>
+            <small>
+              updated <%= time_ago_in_words(wiki.updated_at) %> ago
+            </small>          
          </div>
        </div>
      <% end %>

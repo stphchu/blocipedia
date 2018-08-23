@@ -1,16 +1,18 @@
 <br>
 <div class="jumbotron">
    <h1>Blocipedia: Social, Markdown Wikis</h1>
-   <h4>Create and share Markdown Wikis</h4>
+   <h2>Create and share Markdown Wikis</h2>
 </div>
-
+	
+<% unless user_signed_in? %>
  <div class="row">
    <div class="col-md-4">
-     <h2>Section 1</h2>
-     <p>desc1</p>
+     <h2>Free Account</h2>
+     <p>Create as many public wikis as you want!</p>
    </div>
    <div class="col-md-4">
-     <h2>Section 2</h2>
-     <p>desc2</p>
+     <h2>Premium Account</h2>
+     <p>Create private wikis!</p>
    </div>
 </div>
+<% end %>
