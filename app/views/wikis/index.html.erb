@@ -4,19 +4,26 @@
  <div class="row">
    <div class="col-md-8">
       <% @wikis.each do |wiki| %>
-       <div class="media">
-         <div class="media-body">
+
+       <% if wiki.private && wiki.user == current_user && current_user.member? %>
+          <% wiki.private = 'false' %>
+       <% end %>         
+
+        <% if user_authorized_for_private? || !wiki.private %>
+         <div class="media">
+          <div class="media-body">
            <h4 class="media-heading">
              <%= link_to wiki.title, wiki %>
            </h4>
             <small>
+              <% if wiki.private %><i>(Private)</i><% end %>
               updated <%= time_ago_in_words(wiki.updated_at) %> ago
-            </small>          
+            </small>    
+          </div>
          </div>
-       </div>
+        <% end %>
      <% end %>
    </div>
-
 
  <% if user_signed_in? %>
    <div class="col-md-4">

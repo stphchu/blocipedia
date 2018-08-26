@@ -61,7 +61,9 @@
  <% end %>
 
   <% if current_user.role == "premium" %>
-    <%= button_to "Revert to Free Account", downgrade_account_path, data: { confirm: "Are you sure you want to change to a free account?" }, class: 'btn btn-info' %>
+    <%= button_to "Revert to Free Account", downgrade_account_path, 
+        data: { confirm: "Are you sure you want to change to a free account? NOTE: All your private wikis will become public" }, 
+        class: 'btn btn-info' %>
     <br>
   <% end %>
     <%= button_to "Cancel my Account", registration_path(resource_name), data: { confirm: "Are you sure you want to delete your account?" }, method: :delete, class: 'btn btn-danger' %>
