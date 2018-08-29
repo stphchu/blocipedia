@@ -62,3 +62,5 @@ gem 'faker'
 gem 'stripe'
 
 gem 'figaro'
+
+gem 'redcarpet'
