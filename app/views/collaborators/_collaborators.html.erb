@@ -1,0 +1,7 @@
+<b>Collaborators</b>
+
+  <%= form_for [@wiki, Collaborator.new] do |f| %>
+      <%= email_field_tag :collaborator_user %>
+
+      <%= f.submit "Add collaborator", class: 'btn' %>
+  <% end %>

@@ -2,13 +2,20 @@
 
  <div class="row">
 
-   <div class="col-md-4">
-     <p>Guidelines:</p>
+  <div class="col-md-4">
+   <b>Guidelines:</b>
      <ul>
        <li>1</li>
        <li>2</li>
        <li>3</li>
      </ul>
+  
+   <br>
+
+   <% if current_user.admin? || current_user.premium? %>
+     <%= render partial: "collaborators", locals: { wiki: @wiki, user: @user } %>
+   <% end %>
+
    </div>
 
   <div class="col-md-8">

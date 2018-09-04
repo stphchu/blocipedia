@@ -2,7 +2,7 @@ class WikisController < ApplicationController
 
 #INDEX
   def index
-     @wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
   end
 
 #SHOW
@@ -13,6 +13,7 @@ class WikisController < ApplicationController
 #NEW
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
 #CREATE
@@ -35,6 +36,7 @@ class WikisController < ApplicationController
 #EDIT
   def edit
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
 #UPDATE

@@ -8,14 +8,14 @@
        <%= f.label :body %>
        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki content" %>
      </div>
-   
-     <% if current_user.admin? || current_user.premium? %>
-       <div class="form-group">
-         <%= f.label :private, class: 'checkbox' do %>
-           <%= f.check_box :private %> Private wiki
-         <% end %>
-       </div>
-     <% end %>
  
+    <% if current_user.admin? || (current_user.premium? && @wiki.user == current_user) %>
+      <div class="form-group">
+        <%= f.label :private, class: 'checkbox' do %>
+          <%= f.check_box :private %> Private wiki
+        <% end %>
+      </div>
+    <% end %>      
+     
     <%= f.submit "Save", class: 'btn btn-success' %>
  <% end %>

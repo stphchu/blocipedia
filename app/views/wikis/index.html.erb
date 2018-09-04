@@ -9,8 +9,7 @@
           <% wiki.private = 'false' %>
        <% end %>         
 
-        <% if user_authorized_for_private? || !wiki.private %>
-         <div class="media">
+        <div class="media">
           <div class="media-body">
            <h4 class="media-heading">
              <%= link_to wiki.title, wiki %>
@@ -20,8 +19,7 @@
               updated <%= time_ago_in_words(wiki.updated_at) %> ago
             </small>    
           </div>
-         </div>
-        <% end %>
+        </div>
      <% end %>
    </div>
 

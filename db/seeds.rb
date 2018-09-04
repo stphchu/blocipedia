@@ -25,7 +25,7 @@ require 'faker'
    wiki = Wiki.create!(
      title:  Faker::String.random,
      body:   Faker::Hipster.paragraphs,
-     private: Faker::Boolean.boolean,
+     private: false,
      user: users.sample
    )
 
