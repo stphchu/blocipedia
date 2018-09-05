@@ -1,7 +1,23 @@
 <b>Collaborators</b>
+<br>   
+
+<ul class="list-group">
+    <% wiki.collaborators.each do |c| %>
+       <% user = User.find(c.user_id) %>
+         <li class="list-group-item">
+         <%= link_to "X", wiki_collaborator_path(@wiki, c), class: 'btn btn-danger btn-sm', method: :delete %> 
+         <%=user.email %>
+         </li>
+    <% end %>
+  </ul>
+
+  <br>
 
   <%= form_for [@wiki, Collaborator.new] do |f| %>
-      <%= email_field_tag :collaborator_user %>
-
+      <%= email_field_tag :collaborator %>
+      <br><br>
       <%= f.submit "Add collaborator", class: 'btn' %>
   <% end %>
+ 
+ <br>
+

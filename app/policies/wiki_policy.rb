@@ -36,11 +36,11 @@ attr_reader :user, :wiki
         all_wikis = scope.all
         all_wikis.each do |wiki|
           if !wiki.private || wiki.user == user || wiki.collaborators.include?(user)
-            wikis << wiki # if the user is premium, only show them public wikis, or that private wikis they created, 
-                        # or private wikis they are a collaborator on
+            wikis << wiki # if the user is premium, only show them public wikis, 
+                          # or that private wikis they created, or private wikis they are a collaborator on
           end
         end
-      else # this is the lowly standard user
+      else # standard user
         all_wikis = scope.all
         wikis = []
         all_wikis.each do |wiki|

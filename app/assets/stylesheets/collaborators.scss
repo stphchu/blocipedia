@@ -1,3 +1,12 @@
 // Place all the styles related to the Collaborators controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list-group{
+    max-height: 200px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    overflow-y:auto;
+    overflow-x:auto;
+    -webkit-overflow-scrolling: touch;
+}

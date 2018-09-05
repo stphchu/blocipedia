@@ -13,7 +13,7 @@
      <br>
 
      <% if current_user.admin? || (@wiki.user == current_user && current_user.premium?) %>  
-       <%= render partial: "collaborators/collaborators", locals: { wiki: @wiki, user: @user } %>
+       <%= render partial: "collaborators/collaborators", locals: { wiki: @wiki } %>
      <% end %>
    </div>
 
