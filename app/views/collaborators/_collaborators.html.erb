@@ -1,7 +1,7 @@
 <b>Collaborators</b>
 <br>   
 
-<ul class="list-group">
+  <ul class="list-group">
     <% wiki.collaborators.each do |c| %>
        <% user = User.find(c.user_id) %>
          <li class="list-group-item">
